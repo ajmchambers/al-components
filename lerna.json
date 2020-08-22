@@ -3,10 +3,5 @@
     "packages/al-components",
     "packages/al-components-react"
   ],
-  "version": "independent",
-  "command": {
-    "publish": {
-      "ignoreChanges": ["packages/example-project/*"]
-    }
-  }
+  "version": "independent"
 }

@@ -6,7 +6,7 @@ export const config: Config = {
   taskQueue: 'async',
   outputTargets: [
     reactOutputTarget({
-      componentCorePackage: 'al-components',
+      componentCorePackage: '@ajmchambers/al-components',
       proxiesFile: '../al-components-react/src/components.ts',
     }),
     {

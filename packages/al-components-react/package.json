@@ -1,8 +1,10 @@
 {
   "name": "@ajmchambers/al-components-react",
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": false,
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
   "description": "React specific wrapper for component-library",
   "license": "MIT",
   "scripts": {
@@ -32,7 +34,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@ajmchambers/al-components": "^0.0.1"
+    "@ajmchambers/al-components": "^0.0.2"
   },
   "peerDependencies": {
     "react": "^16.7.0",
