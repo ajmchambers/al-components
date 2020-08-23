@@ -8,6 +8,10 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AlCard {
     }
+    interface AlCounter {
+        "max": number;
+        "min": number;
+    }
 }
 declare global {
     interface HTMLAlCardElement extends Components.AlCard, HTMLStencilElement {
@@ -16,15 +20,28 @@ declare global {
         prototype: HTMLAlCardElement;
         new (): HTMLAlCardElement;
     };
+    interface HTMLAlCounterElement extends Components.AlCounter, HTMLStencilElement {
+    }
+    var HTMLAlCounterElement: {
+        prototype: HTMLAlCounterElement;
+        new (): HTMLAlCounterElement;
+    };
     interface HTMLElementTagNameMap {
         "al-card": HTMLAlCardElement;
+        "al-counter": HTMLAlCounterElement;
     }
 }
 declare namespace LocalJSX {
     interface AlCard {
     }
+    interface AlCounter {
+        "max"?: number;
+        "min"?: number;
+        "onAlChange"?: (event: CustomEvent<number>) => void;
+    }
     interface IntrinsicElements {
         "al-card": AlCard;
+        "al-counter": AlCounter;
     }
 }
 export { LocalJSX as JSX };
@@ -32,6 +49,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "al-card": LocalJSX.AlCard & JSXBase.HTMLAttributes<HTMLAlCardElement>;
+            "al-counter": LocalJSX.AlCounter & JSXBase.HTMLAttributes<HTMLAlCounterElement>;
         }
     }
 }
