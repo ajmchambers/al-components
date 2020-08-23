@@ -1,4 +1,7 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
+import { postcss } from '@stencil/postcss';
+import autoprefixer from 'autoprefixer';
 import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
@@ -8,6 +11,8 @@ export const config: Config = {
     reactOutputTarget({
       componentCorePackage: '@ajmchambers/al-components',
       proxiesFile: '../al-components-react/src/components.ts',
+      includeDefineCustomElements: true,
+      includePolyfills: true
     }),
     {
       type: 'dist',
@@ -20,5 +25,11 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null, // disable service workers
     },
+  ],
+  plugins: [
+    sass(),
+    postcss({
+      plugins: [autoprefixer()]
+    })
   ],
 };
